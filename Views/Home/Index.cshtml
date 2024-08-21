@@ -1,8 +1,178 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewBag.Title = "Inicio";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<!-- Sección Hero -->
+<section class="hero" id="hero">
+    <div class="container">
+        <div class="hero-content">
+            <h2><b>BIENVENIDO A TorchMedia</b></h2>
+            <p>Transforma tus ideas en realidad con nuestra agencia de edición de video y embudos de ventas. Impulsa
+                tu negocio con contenido visual impactante y estrategias de conversión efectivas. ¡Descubre cómo
+                podemos ayudarte a alcanzar tus objetivos hoy!</p>
+        </div>
+        <button class="button button-outline">
+            <a href="@Url.Action("Contactanos", "Home")" style="text-decoration: none; color: inherit;">Contáctanos</a>
+        </button>
+        <div class="hero-video">
+            <video autoplay muted loop>
+                <source src="~/Video/videoFondo.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+</section>
+
+<!-- Sección Quiénes Somos -->
+<section id="quienes-somos" class="quienes-somos">
+    <div class="container">
+        <div class="section-content">
+            <img src="~/Img/logo.png" width="50%" alt="Logo TorchMedia">
+            <div class="info">
+                <h1>QUIÉNES SOMOS</h1>
+                <p>En TorchMedia, transformamos ideas en videos impactantes y estrategias de ventas efectivas para
+                    hacer crecer tu negocio. Con compromiso absoluto hacia la calidad y resultados, estamos aquí
+                    para llevar tu éxito al siguiente nivel.</p>
+            </div>
+        </div>
+        <a href="@Url.Action("Contactanos", "Home")" class="button">Contáctanos</a>
+    </div>
+</section>
+
+<!-- Sección Nuestros Servicios -->
+<section id="nuestros-servicios" class="nuestros-servicios">
+    <div class="background-video">
+        <video autoplay muted loop>
+            <source src="~/Video/Services_Background.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="container">
+        <div class="section-title">
+            <h2>Nuestros Servicios</h2>
+        </div>
+        <div class="section-content">
+            <div class="section-item">
+                <img src="~/Img/video_edit_icon.png" width="50px" alt="Icono de edición de video">
+                <h3>Edición y estrategias de contenido</h3>
+                <p>Transformamos tus ideas en experiencias visuales memorables. Desde la edición experta hasta la
+                    estrategia de contenido, optimizamos cada detalle para captar y retener la atención de tu
+                    audiencia.</p>
+                <button class="button button-outline">
+                    <a href="@Url.Action("Contactanos", "Home")" style="text-decoration: none; color: inherit;">Más Información</a>
+                </button>
+            </div>
+            <div class="section-item">
+                <img src="~/Img/icono-2.png" width="50px" alt="Icono de guiones y portadas">
+                <h3>Guiones y portadas para tus videos</h3>
+                <p>Creamos narrativas cautivadoras y portadas visualmente atractivas que destacan entre la multitud.
+                    Nuestros guiones y diseño de portadas garantizan que cada video no solo cuente una historia,
+                    sino que también impulse la acción de tu audiencia.</p>
+                <button class="button button-outline">
+                    <a href="@Url.Action("Contactanos", "Home")" style="text-decoration: none; color: inherit;">Más Información</a>
+                </button>
+            </div>
+            <div class="section-item">
+                <img src="~/Img/sales-funnel.jpg" height="50px" alt="Icono de embudos de venta">
+                <h3>Embudos de venta</h3>
+                <p>Diseñamos embudos de venta personalizados que convierten visitantes en clientes. Desde la
+                    captación inicial hasta la conversión final, optimizamos cada etapa para maximizar tus
+                    conversiones y aumentar tus ingresos.</p>
+                <button class="button button-outline">
+                    <a href="@Url.Action("Contactanos", "Home")" style="text-decoration: none; color: inherit;">Más Información</a>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Sección Proyectos -->
+<section id="proyectos" class="proyectos">
+    <div class="container">
+        <div class="section-title">
+            <h2>Proyectos Destacados</h2>
+        </div>
+        <div class="section-content">
+            <div class="section-item">
+                <video id="video-1" width="130%" autoplay muted loop>
+                    <source src="~/Video/video-1.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="section-item">
+                <video id="video-2" width="130%" autoplay muted loop>
+                    <source src="~/Video/video-2.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="section-item">
+                <video id="video-3" width="130%" autoplay muted loop>
+                    <source src="~/Video/video-3.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+        <div class="section-content">
+            <div class="proyectos-img-wrapper">
+                <img src="~/Img/video-1.jpg" alt="Proyecto 1" width="100%">
+            </div>
+            <div class="proyectos-img-wrapper">
+                <img src="~/Img/video-2.jpg" alt="Proyecto 2" width="100%">
+            </div>
+            <div class="proyectos-img-wrapper">
+                <img src="~/Img/video-3.jpg" alt="Proyecto 3" width="100%">
+            </div>
+        </div>
+    </div>
+    <a href="@Url.Action("Contactanos", "Home")" class="button">Contáctanos</a>
+</section>
+
+<!-- Sección Testimonios -->
+<section id="testimonios" class="testimonios">
+    <div class="container">
+        <div class="section-title">
+            <h2>Testimonios</h2>
+        </div>
+        <div class="section-content">
+            <!-- Video de Testimonios -->
+            <div class="video-container">
+                <video controls>
+                    <source src="~/Video/testimonios.mp4" type="video/mp4">
+                    Tu navegador no soporta el elemento de video.
+                </video>
+            </div>
+        </div>
+        <!-- Image Slider -->
+        <div class="slider">
+            <div class="slides">
+                <div class="slide">
+                    <img src="~/Img/testimonio-1.png" alt="Testimonio 1">
+                </div>
+                <div class="slide">
+                    <img src="~/Img/testimonio-2.png" alt="Testimonio 2">
+                </div>
+                <div class="slide">
+                    <img src="~/Img/testimonio-3.png" alt="Testimonio 3">
+                </div>
+                <div class="slide">
+                    <img src="~/Img/testimonio-4.png" alt="Testimonio 4">
+                </div>
+            </div>
+            <div class="navigation">
+                <i class="fas fa-chevron-left prev"></i>
+                <i class="fas fa-chevron-right next"></i>
+            </div>
+            <div class="indicators">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Pie de página -->
+<footer class="footer">
+    <div class="container">
+        <p>© 2024 Todos los Derechos Reservados TorchMediaGrowth S.A.</p>
+        <p>infotorchmedia@gmail.com</p>
+        <div class="social-links">
+            <a href="https://www.instagram.com/torchmediagrowth"><i class="fab fa-instagram"></i></a>
+        </div>
+    </div>
+</footer>

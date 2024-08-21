@@ -1,4 +1,21 @@
-﻿// Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    const menuBackdrop = document.createElement('div');
+    menuBackdrop.classList.add('menu-backdrop');
+    document.body.appendChild(menuBackdrop);
 
-// Write your JavaScript code.
+    // Función para abrir el menú
+    hamburger.addEventListener('click', function() {
+        navLinks.classList.toggle('show');
+        menuBackdrop.classList.toggle('show');
+        document.body.classList.toggle('menu-open');
+    });
+
+    // Función para cerrar el menú cuando se hace clic en el backdrop
+    menuBackdrop.addEventListener('click', function() {
+        navLinks.classList.remove('show');
+        menuBackdrop.classList.remove('show');
+        document.body.classList.remove('menu-open');
+    });
+});

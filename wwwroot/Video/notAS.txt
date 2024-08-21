@@ -1,0 +1,10 @@
+v1.0
+
+vamos a cambiar los proyectos destacados y los vamos a re catalogar
+
+v1.1 se creo una base de datos para los formularios
+
+v.1.2 se crea la opcion de admin, hecho en un mvc en el que se puede ver desde la pagina con una contraseña y pagina/admin, todos los formularios, agregar o quitar proyectos destacados, agregar o quitar testimonios, ver la cantidad de gente que ingresa a la pagina, 2.1 ver en una lista todos los usuarios que tenes con los datos
+
+
+v1.2.1 se crean las cuentas para los usuarios con el fin de que puedan facilitar los formularios de inscripcion, sin la necesidad de repetir los datos y tambien crear una seccion de reseñas-comentarios dentro de testimonios y con la cuenta podras comentar y tener la opcion de ver el historial de servicios que hayas contratados e inscribirte a uno nuevo, 
