@@ -6,7 +6,7 @@
 
     public class BD
     {
-        private string connectionString = "Server=localhost;Database=TorcMediaDB ;Trusted_Connection=SSPI;MultipleActiveResultSets=true;Trust Server Certificate=true";
+        private string connectionString = @"Server=localhost;Database=TorchMediaDB;Trusted_Connection=True;TrustServerCertificate=True;";
 
         // Métodos para la sección Hero
         public HeroContent ObtenerHeroContent()
