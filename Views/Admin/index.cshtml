@@ -1,0 +1,70 @@
+@model TorchMedia.Models.AdminViewModel
+
+
+@{
+    ViewBag.Title = "Administración";
+}
+
+<h2>Editar Contenidos</h2>
+
+<!-- Formulario para editar la sección Hero -->
+<h3>Sección Hero</h3>
+<form asp-action="ActualizarHeroContent" method="post">
+    <label>Título:</label>
+    <input type="text" name="Titulo" value="@Model.HeroContent.Titulo" />
+    <label>Descripción:</label>
+    <textarea name="Descripcion">@Model.HeroContent.Descripcion</textarea>
+    <label>Video URL:</label>
+    <input type="text" name="VideoUrl" value="@Model.HeroContent.VideoUrl" />
+    <button type="submit">Guardar</button>
+</form>
+
+<!-- Formulario para editar la sección Quiénes Somos -->
+<h3>Sección Quiénes Somos</h3>
+<form asp-action="ActualizarQuienesSomosContent" method="post">
+    <label>Título:</label>
+    <input type="text" name="Titulo" value="@Model.QuienesSomosContent.Titulo" />
+    <label>Descripción:</label>
+    <textarea name="Descripcion">@Model.QuienesSomosContent.Descripcion</textarea>
+    <label>Imagen URL:</label>
+    <input type="text" name="ImagenUrl" value="@Model.QuienesSomosContent.ImagenUrl" />
+    <button type="submit">Guardar</button>
+</form>
+
+<!-- Formulario para editar la sección Servicios -->
+<h3>Sección Servicios</h3>
+@foreach (var servicio in Model.ServiciosContent)
+{
+    <form asp-action="ActualizarServiciosContent" method="post">
+        <label>Título:</label>
+        <input type="text" name="Titulo" value="@servicio.Titulo" />
+        <label>Descripción:</label>
+        <textarea name="Descripcion">@servicio.Descripcion</textarea>
+        <label>Icono URL:</label>
+        <input type="text" name="IconoUrl" value="@servicio.IconoUrl" />
+        <input type="hidden" name="ServicioID" value="@servicio.ServicioID" />
+        <button type="submit">Guardar</button>
+    </form>
+}
+
+<!-- Formulario para editar la sección Testimonios -->
+<h3>Sección Testimonios</h3>
+<form asp-action="ActualizarTestimoniosContent" method="post">
+    <label>Video URL:</label>
+    <input type="text" name="VideoUrl" value="@Model.TestimoniosContent.VideoUrl" />
+    <label>Imagen URL:</label>
+    <input type="text" name="ImagenUrl" value="@Model.TestimoniosContent.ImagenUrl" />
+    <button type="submit">Guardar</button>
+</form>
+
+<!-- Formulario para editar el Pie de Página -->
+<h3>Pie de Página</h3>
+<form asp-action="ActualizarFooterContent" method="post">
+    <label>Texto:</label>
+    <input type="text" name="Texto" value="@Model.FooterContent.Texto" />
+    <label>Correo:</label>
+    <input type="text" name="Correo" value="@Model.FooterContent.Correo" />
+    <label>Instagram URL:</label>
+    <input type="text" name="InstagramUrl" value="@Model.FooterContent.InstagramUrl" />
+    <button type="submit">Guardar</button>
+</form>

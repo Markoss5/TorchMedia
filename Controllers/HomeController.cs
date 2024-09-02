@@ -1,31 +1,45 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using Torchmedia.Models;
+using TorchMedia.Models; // Asegúrate de que esto esté aquí
 
-namespace Torchmedia.Controllers;
 
-public class HomeController : Controller
+namespace TorchMedia.Controllers
 {
-    private readonly ILogger<HomeController> _logger;
-
-    public HomeController(ILogger<HomeController> logger)
+    public class HomeController : Controller
     {
-        _logger = logger;
-    }
+        private BD repo = new BD();
 
-    public IActionResult Index()
-    {
-        return View();
-    }
+        public IActionResult Index()
+        {
+            var heroContent = repo.ObtenerHeroContent();
+            var quienesSomosContent = repo.ObtenerQuienesSomosContent();
+            var serviciosContent = repo.ObtenerServiciosContent();
+            var proyectosContent = repo.ObtenerProyectosContent();
+            var testimoniosContent = repo.ObtenerTestimoniosContent();
+            var footerContent = repo.ObtenerFooterContent();
 
-    public IActionResult Privacy()
-    {
-        return View();
-    }
+            var model = new HomeViewModel
+            {
+                HeroContent = heroContent,
+                QuienesSomosContent = quienesSomosContent,
+                ServiciosContent = serviciosContent,
+                ProyectosContent = proyectosContent,
+                TestimoniosContent = testimoniosContent,
+                FooterContent = footerContent
+            };
 
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error()
-    {
-        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return View(model);
+        }
+
+        public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        /*[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error()
+        {
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }*/
     }
 }
