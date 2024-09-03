@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\user\\Documents\\TorchMedia\\Torchmedia.csproj": {}
+    "C:\\Users\\48115731\\Downloads\\TorchMedia\\Torchmedia.csproj": {}
   },
   "projects": {
-    "C:\\Users\\user\\Documents\\TorchMedia\\Torchmedia.csproj": {
+    "C:\\Users\\48115731\\Downloads\\TorchMedia\\Torchmedia.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\Documents\\TorchMedia\\Torchmedia.csproj",
+        "projectUniqueName": "C:\\Users\\48115731\\Downloads\\TorchMedia\\Torchmedia.csproj",
         "projectName": "Torchmedia",
-        "projectPath": "C:\\Users\\user\\Documents\\TorchMedia\\Torchmedia.csproj",
-        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\Documents\\TorchMedia\\obj\\",
+        "projectPath": "C:\\Users\\48115731\\Downloads\\TorchMedia\\Torchmedia.csproj",
+        "packagesPath": "C:\\Users\\48115731\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\48115731\\Downloads\\TorchMedia\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\48115731\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -81,7 +81,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.206/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
