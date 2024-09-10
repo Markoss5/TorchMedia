@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Torchmedia")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+eb8172f0d92733dd79de1856f580b35eb8258f47")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1f5974d1b8d3f1a81f3f088afaab8380eefb543f")]
 [assembly: System.Reflection.AssemblyProductAttribute("Torchmedia")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Torchmedia")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

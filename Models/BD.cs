@@ -17,14 +17,16 @@
             }
         }
 
-        public void ActualizarHeroContent(HeroContent content)
-        {
-            using (var connection = new SqlConnection(connectionString))
-            {
-                var sql = "UPDATE HeroContent SET Titulo = @Titulo, Descripcion = @Descripcion, VideoUrl = @VideoUrl WHERE HeroContentID = @HeroContentID";
-                connection.Execute(sql, content);
-            }
-        }
+public void ActualizarHeroContent(HeroContent content)
+{
+    using (var connection = new SqlConnection(connectionString))
+    {
+        var sql = "UPDATE HeroContent SET Titulo = @Titulo, Descripcion = @Descripcion, VideoUrl = @VideoUrl WHERE HeroContentID = @HeroContentID";
+        var rowsAffected = connection.Execute(sql, content);
+        Console.WriteLine($"Filas actualizadas: {rowsAffected}");
+    }
+}
+
 
         // Métodos para la sección Quiénes Somos
         public QuienesSomosContent ObtenerQuienesSomosContent()
@@ -35,14 +37,18 @@
             }
         }
 
-        public void ActualizarQuienesSomosContent(QuienesSomosContent content)
-        {
-            using (var connection = new SqlConnection(connectionString))
-            {
-                var sql = "UPDATE QuienesSomosContent SET Titulo = @Titulo, Descripcion = @Descripcion, ImagenUrl = @ImagenUrl WHERE QuienesSomosID = @QuienesSomosID";
-                connection.Execute(sql, content);
-            }
-        }
+public void ActualizarQuienesSomosContent(QuienesSomosContent content)
+{
+    using (var connection = new SqlConnection(connectionString))
+    {
+        // Consulta SQL para actualizar el contenido
+        var sql = "UPDATE QuienesSomosContent SET Titulo = @Titulo, Descripcion = @Descripcion, ImagenUrl = @ImagenUrl WHERE QuienesSomosID = @QuienesSomosID";
+        
+        // Ejecuta la consulta
+        var rowsAffected = connection.Execute(sql, content);
+        Console.WriteLine($"Filas actualizadas: {rowsAffected}");
+    }
+}
 
         // Métodos para la sección Servicios
         public IEnumerable<ServiciosContent> ObtenerServiciosContent()

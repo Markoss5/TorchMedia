@@ -5,11 +5,12 @@
     ViewBag.Title = "Administración";
 }
 
-<h2>Editar Contenidos</h2>
+<h2 class="adminLogin">Editar Contenidos</h2>
 
 <!-- Formulario para editar la sección Hero -->
 <h3>Sección Hero</h3>
 <form asp-action="ActualizarHeroContent" method="post">
+    <input type="hidden" name="HeroContentID" value="@Model.HeroContent.HeroContentID" />
     <label>Título:</label>
     <input type="text" name="Titulo" value="@Model.HeroContent.Titulo" />
     <label>Descripción:</label>
@@ -19,17 +20,29 @@
     <button type="submit">Guardar</button>
 </form>
 
+
 <!-- Formulario para editar la sección Quiénes Somos -->
 <h3>Sección Quiénes Somos</h3>
 <form asp-action="ActualizarQuienesSomosContent" method="post">
+    <!-- Campo oculto para el ID de la sección -->
+    <input type="hidden" name="QuienesSomosID" value="@Model.QuienesSomosContent.QuienesSomosID" />
+    
+    <!-- Campo para el título -->
     <label>Título:</label>
     <input type="text" name="Titulo" value="@Model.QuienesSomosContent.Titulo" />
+    
+    <!-- Campo para la descripción -->
     <label>Descripción:</label>
     <textarea name="Descripcion">@Model.QuienesSomosContent.Descripcion</textarea>
+    
+    <!-- Campo para la URL de la imagen -->
     <label>Imagen URL:</label>
     <input type="text" name="ImagenUrl" value="@Model.QuienesSomosContent.ImagenUrl" />
+    
+    <!-- Botón para guardar cambios -->
     <button type="submit">Guardar</button>
 </form>
+
 
 <!-- Formulario para editar la sección Servicios -->
 <h3>Sección Servicios</h3>

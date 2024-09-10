@@ -32,18 +32,34 @@ public class AdminController : Controller
     }
 
     [HttpPost]
-    public IActionResult ActualizarHeroContent(HeroContent content)
+public IActionResult ActualizarHeroContent(HeroContent content)
+{
+    // Verifica si el contenido llega con los valores correctos
+    Console.WriteLine($"Titulo: {content.Titulo}, Descripcion: {content.Descripcion}, VideoUrl: {content.VideoUrl}");
+
+    if (ModelState.IsValid)
     {
         repo.ActualizarHeroContent(content);
-        return RedirectToAction("Index");
     }
+    
+    return RedirectToAction("Index");
+}
 
-    [HttpPost]
-    public IActionResult ActualizarQuienesSomosContent(QuienesSomosContent content)
+
+[HttpPost]
+public IActionResult ActualizarQuienesSomosContent(QuienesSomosContent content)
+{
+    // Verifica si el contenido llega con los valores correctos
+    Console.WriteLine($"Titulo: {content.Titulo}, Descripcion: {content.Descripcion}, ImagenUrl: {content.ImagenUrl}");
+    
+    // Si el modelo es válido, actualiza la base de datos
+    if (ModelState.IsValid)
     {
         repo.ActualizarQuienesSomosContent(content);
-        return RedirectToAction("Index");
     }
+    
+    return RedirectToAction("Index");
+}
 
     [HttpPost]
     public IActionResult ActualizarServiciosContent(ServiciosContent content)
