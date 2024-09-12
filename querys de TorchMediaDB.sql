@@ -22,7 +22,7 @@ CREATE TABLE Turnos (
     CONSTRAINT FK_Turnos_Usuarios FOREIGN KEY (UsuarioID) REFERENCES Usuarios(UsuarioID)
 );
 
--- Tabla para la Sección Hero
+-- Tabla para la SecciÃ³n Hero
 CREATE TABLE HeroContent (
     HeroContentID INT PRIMARY KEY IDENTITY(1,1),
     Titulo NVARCHAR(255),
@@ -30,7 +30,7 @@ CREATE TABLE HeroContent (
     VideoUrl NVARCHAR(255)
 );
 
--- Tabla para la Sección Quiénes Somos
+-- Tabla para la SecciÃ³n QuiÃ©nes Somos
 CREATE TABLE QuienesSomosContent (
     QuienesSomosID INT PRIMARY KEY IDENTITY(1,1),
     Titulo NVARCHAR(255),
@@ -38,7 +38,7 @@ CREATE TABLE QuienesSomosContent (
     ImagenUrl NVARCHAR(255)
 );
 
--- Tabla para la Sección Nuestros Servicios
+-- Tabla para la SecciÃ³n Nuestros Servicios
 CREATE TABLE ServiciosContent (
     ServicioID INT PRIMARY KEY IDENTITY(1,1),
     Titulo NVARCHAR(255),
@@ -46,49 +46,53 @@ CREATE TABLE ServiciosContent (
     IconoUrl NVARCHAR(255)
 );
 
--- Tabla para la Sección Proyectos
+-- Tabla para la SecciÃ³n Proyectos
 CREATE TABLE ProyectosContent (
     ProyectoID INT PRIMARY KEY IDENTITY(1,1),
     VideoUrl NVARCHAR(255),
     ImagenUrl NVARCHAR(255)
 );
 
--- Tabla para la Sección Testimonios
+-- Tabla para la SecciÃ³n Testimonios
 CREATE TABLE TestimoniosContent (
     TestimonioID INT PRIMARY KEY IDENTITY(1,1),
     VideoUrl NVARCHAR(255),
     ImagenUrl NVARCHAR(255)
 );
 
-
-USE TorchMediaDB;
-GO
+-- Tabla para la SecciÃ³n Pie de PÃ¡gina (Footer)
+CREATE TABLE FooterContent (
+    FooterID INT PRIMARY KEY IDENTITY(1,1),
+    Texto NVARCHAR(255),
+    Correo NVARCHAR(100),
+    InstagramUrl NVARCHAR(255)
+);
 
 -- Insertar datos en la tabla HeroContent
 INSERT INTO HeroContent (Titulo, Descripcion, VideoUrl)
 VALUES 
 ('BIENVENIDO A TorchMedia', 
-'Transforma tus ideas en realidad con nuestra agencia de edición de video y embudos de ventas. Impulsa tu negocio con contenido visual impactante y estrategias de conversión efectivas. ¡Descubre cómo podemos ayudarte a alcanzar tus objetivos hoy!', 
+'Transforma tus ideas en realidad con nuestra agencia de ediciÃ³n de video y embudos de ventas. Impulsa tu negocio con contenido visual impactante y estrategias de conversiÃ³n efectivas. Descubre cÃ³mo podemos ayudarte a alcanzar tus objetivos hoy.', 
 'Video/videoFondo.mp4');
 
 -- Insertar datos en la tabla QuienesSomosContent
 INSERT INTO QuienesSomosContent (Titulo, Descripcion, ImagenUrl)
 VALUES 
-('QUIÉNES SOMOS', 
-'En TorchMedia, transformamos ideas en videos impactantes y estrategias de ventas efectivas para hacer crecer tu negocio. Con compromiso absoluto hacia la calidad y resultados, estamos aquí para llevar tu éxito al siguiente nivel.', 
+('QUIÃ‰NES SOMOS', 
+'En TorchMedia, transformamos ideas en videos impactantes y estrategias de ventas efectivas para hacer crecer tu negocio. Con compromiso absoluto hacia la calidad y resultados, estamos aquÃ­ para llevar tu Ã©xito al siguiente nivel.', 
 'Img/logo.png');
 
 -- Insertar datos en la tabla ServiciosContent
 INSERT INTO ServiciosContent (Titulo, Descripcion, IconoUrl)
 VALUES 
-('Edición y estrategias de contenido', 
-'Transformamos tus ideas en experiencias visuales memorables. Desde la edición experta hasta la estrategia de contenido, optimizamos cada detalle para captar y retener la atención de tu audiencia.', 
+('EdiciÃ³n y estrategias de contenido', 
+'Transformamos tus ideas en experiencias visuales memorables. Desde la ediciÃ³n experta hasta la estrategia de contenido, optimizamos cada detalle para captar y retener la atenciÃ³n de tu audiencia.', 
 'Img/video edit icon.png'),
 ('Guiones y portadas para tus videos', 
-'Creamos narrativas cautivadoras y portadas visualmente atractivas que destacan entre la multitud. Nuestros guiones y diseño de portadas garantizan que cada video no solo cuente una historia, sino que también impulse la acción de tu audiencia.', 
+'Creamos narrativas cautivadoras y portadas visualmente atractivas que destacan entre la multitud. Nuestros guiones y diseÃ±o de portadas garantizan que cada video no solo cuente una historia, sino que tambiÃ©n impulse la acciÃ³n de tu audiencia.', 
 'Img/icono-2.png'),
 ('Embudos de venta', 
-'Diseñamos embudos de venta personalizados que convierten visitantes en clientes. Desde la captación inicial hasta la conversión final, optimizamos cada etapa para maximizar tus conversiones y aumentar tus ingresos.', 
+'DiseÃ±amos embudos de venta personalizados que convierten visitantes en clientes. Desde la captaciÃ³n inicial hasta la conversiÃ³n final, optimizamos cada etapa para maximizar tus conversiones y aumentar tus ingresos.', 
 'Img/sales-funnel.jpg');
 
 -- Insertar datos en la tabla ProyectosContent
@@ -106,17 +110,6 @@ VALUES
 -- Insertar datos en la tabla FooterContent
 INSERT INTO FooterContent (Texto, Correo, InstagramUrl)
 VALUES 
-('© 2024 Todos los Derechos Reservados TorchMediaGrowth S.A.', 
+('Â© 2024 Todos los Derechos Reservados TorchMediaGrowth S.A.', 
 'infotorchmedia@gmail.com', 
 'https://www.instagram.com/torchmediagrowth');
-
--- Tabla para la Sección Pie de página (Footer)
-CREATE TABLE FooterContent (
-    FooterID INT PRIMARY KEY IDENTITY(1,1),
-    Texto NVARCHAR(255),
-    Correo NVARCHAR(100),
-    InstagramUrl NVARCHAR(255)
-);
-
-
-

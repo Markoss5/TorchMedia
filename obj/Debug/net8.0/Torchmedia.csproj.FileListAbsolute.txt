@@ -225,3 +225,4 @@ C:\Users\48115731\Documents\TorchMedia\obj\Debug\net8.0\refint\Torchmedia.dll
 C:\Users\48115731\Documents\TorchMedia\obj\Debug\net8.0\Torchmedia.pdb
 C:\Users\48115731\Documents\TorchMedia\obj\Debug\net8.0\Torchmedia.genruntimeconfig.cache
 C:\Users\48115731\Documents\TorchMedia\obj\Debug\net8.0\ref\Torchmedia.dll
+C:\Users\48115731\Downloads\TorchMedia\bin\Debug\net8.0\System.Security.Permissions.dll

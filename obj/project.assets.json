@@ -3018,11 +3018,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\48115731\\Documents\\TorchMedia\\Torchmedia.csproj",
+      "projectUniqueName": "C:\\Users\\48115731\\Downloads\\TorchMedia\\Torchmedia.csproj",
       "projectName": "Torchmedia",
-      "projectPath": "C:\\Users\\48115731\\Documents\\TorchMedia\\Torchmedia.csproj",
+      "projectPath": "C:\\Users\\48115731\\Downloads\\TorchMedia\\Torchmedia.csproj",
       "packagesPath": "C:\\Users\\48115731\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\48115731\\Documents\\TorchMedia\\obj\\",
+      "outputPath": "C:\\Users\\48115731\\Downloads\\TorchMedia\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -3096,7 +3096,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.206/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

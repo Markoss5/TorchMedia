@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "DSxOSoYBK7aOkql5prlQj3uNHYHdy+L+pfYfYprtjQIGUFKyMCvvtRhJ2dov3eSGkAijRN0STDGnZr33zQQCqQ==",
+  "dgSpecHash": "9O62fpCEQu5WgeJbc/c6g1MOsPFCfP853J7xN35imBI/J2zeqT9YbUsTPVzPuY2bM666M0j7ViucpTf1xPR23Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\48115731\\Documents\\TorchMedia\\Torchmedia.csproj",
+  "projectFilePath": "C:\\Users\\48115731\\Downloads\\TorchMedia\\Torchmedia.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\48115731\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\48115731\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
