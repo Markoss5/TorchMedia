@@ -81,3 +81,23 @@
     <input type="text" name="InstagramUrl" value="@Model.FooterContent.InstagramUrl" />
     <button type="submit">Guardar</button>
 </form>
+
+<h3>Establecer Disponibilidad de Turnos</h3>
+<form asp-action="EstablecerDisponibilidad" method="post">
+    <label>Fecha:</label>
+    <input type="date" name="Fecha" required />
+    
+    <label>Hora de inicio:</label>
+    <input type="time" name="HoraInicio" required />
+    
+    <label>Hora de fin:</label>
+    <input type="time" name="HoraFin" required />
+    
+    <button type="submit">Establecer Disponibilidad</button>
+</form>
+
+
+<form asp-controller="Account" asp-action="Logout" method="post">
+    <button type="submit">Cerrar Sesión</button>
+</form>
+

@@ -68,6 +68,16 @@ CREATE TABLE FooterContent (
     InstagramUrl NVARCHAR(255)
 );
 
+-- Tabla de Disponibilidad de Turnos (para que el administrador configure los horarios disponibles)
+CREATE TABLE Disponibilidad (
+    DisponibilidadID INT PRIMARY KEY IDENTITY(1,1),
+    Fecha DATETIME NOT NULL,
+    HoraInicio TIME NOT NULL,
+    HoraFin TIME NOT NULL,
+    Disponible BIT DEFAULT 1
+);
+
+
 -- Insertar datos en la tabla HeroContent
 INSERT INTO HeroContent (Titulo, Descripcion, VideoUrl)
 VALUES 

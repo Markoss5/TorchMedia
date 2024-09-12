@@ -15,7 +15,7 @@ public class AccountController : Controller
     public async Task<IActionResult> Login(string username, string password)
     {
         // Dummy check for credentials, replace with your own validation logic
-        if (username == "admin" && password == "password")
+        if (username == "admincito" && password == "banfield")
         {
             var claims = new List<Claim>
             {
@@ -51,5 +51,12 @@ public class AccountController : Controller
     public IActionResult AccessDenied()
     {
         return View();
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> Logout()
+    {
+        await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+        return RedirectToAction("Login", "Account");
     }
 }

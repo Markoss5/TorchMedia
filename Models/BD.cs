@@ -112,4 +112,38 @@ public void ActualizarQuienesSomosContent(QuienesSomosContent content)
                 connection.Execute(sql, content);
             }
         }
+
+        public IEnumerable<Disponibilidad> ObtenerDisponibilidad()
+{
+    using (var connection = new SqlConnection(connectionString))
+    {
+        return connection.Query<Disponibilidad>("SELECT * FROM Disponibilidad WHERE Disponible = 1");
+    }
+}
+
+// Establecer disponibilidad de turnos (para el administrador)
+public void EstablecerDisponibilidad(Disponibilidad disponibilidad)
+{
+    using (var connection = new SqlConnection(connectionString))
+    {
+        var sql = "INSERT INTO Disponibilidad (Fecha, HoraInicio, HoraFin, Disponible) VALUES (@Fecha, @HoraInicio, @HoraFin, @Disponible)";
+        connection.Execute(sql, disponibilidad);
+    }
+}
+
+// Reservar un turno
+public void ReservarTurno(Turno turno)
+{
+    using (var connection = new SqlConnection(connectionString))
+    {
+        var sql = "INSERT INTO Turnos (UsuarioID, FechaAgendada, Estado) VALUES (@UsuarioID, @FechaAgendada, 'Reservado')";
+        connection.Execute(sql, turno);
+
+        // Actualizar la disponibilidad a no disponible
+        var updateDisponibilidad = "UPDATE Disponibilidad SET Disponible = 0 WHERE Fecha = @FechaAgendada";
+        connection.Execute(updateDisponibilidad, new { FechaAgendada = turno.FechaAgendada });
+    }
+}
+
+
     }
