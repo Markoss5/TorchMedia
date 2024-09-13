@@ -10,5 +10,7 @@ public class AdminViewModel
     public IEnumerable<ProyectosContent> ProyectosContent { get; set; }
     public TestimoniosContent TestimoniosContent { get; set; }
     public FooterContent FooterContent { get; set; }
+
+    public List<Disponibilidad> Disponibilidad { get; set; } = new List<Disponibilidad>();
 }
 }

@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
+using System.Threading.Tasks;  // Asegúrate de incluir este 'using' para el uso de Task
 
 public class AccountController : Controller
 {
@@ -41,22 +42,8 @@ public class AccountController : Controller
         return View();
     }
 
-    [HttpPost]
-    public async Task<IActionResult> Logout()
-    {
-        await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-        return RedirectToAction("Login", "Account");
-    }
-
     public IActionResult AccessDenied()
     {
         return View();
-    }
-
-    [HttpPost]
-    public async Task<IActionResult> Logout()
-    {
-        await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-        return RedirectToAction("Login", "Account");
     }
 }

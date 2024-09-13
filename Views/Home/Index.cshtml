@@ -13,7 +13,7 @@
             <p>@Model.HeroContent.Descripcion</p>
         </div>
         <button class="button button-outline">
-            <a href="@Url.Action("Contactanos", "Home")" style="text-decoration: none; color: inherit;">Contáctanos</a>
+            <li><a href="@Url.Action(Contactanos, Home)">Contactanos</a></li>
         </button>
         <div class="hero-video">
             <video autoplay muted loop>
@@ -33,7 +33,7 @@
                 <p>@Model.QuienesSomosContent.Descripcion</p>
             </div>
         </div>
-        <a href="@Url.Action("Contactanos", "Home")" class="button">Contáctanos</a>
+        <a href="@Url.Action(Contactanos, Home)" class="button">Contáctanos</a>
     </div>
 </section>
 

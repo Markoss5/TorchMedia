@@ -113,37 +113,60 @@ public void ActualizarQuienesSomosContent(QuienesSomosContent content)
             }
         }
 
-        public IEnumerable<Disponibilidad> ObtenerDisponibilidad()
-{
-    using (var connection = new SqlConnection(connectionString))
+    public IEnumerable<Disponibilidad> ObtenerDisponibilidad()
     {
-        return connection.Query<Disponibilidad>("SELECT * FROM Disponibilidad WHERE Disponible = 1");
+        using (var connection = new SqlConnection(connectionString))
+        {
+            return connection.Query<Disponibilidad>("SELECT * FROM Disponibilidad WHERE Disponible = 1");
+        }
     }
-}
 
-// Establecer disponibilidad de turnos (para el administrador)
-public void EstablecerDisponibilidad(Disponibilidad disponibilidad)
-{
-    using (var connection = new SqlConnection(connectionString))
+    // Establecer disponibilidad
+    public void EstablecerDisponibilidad(Disponibilidad disponibilidad)
     {
-        var sql = "INSERT INTO Disponibilidad (Fecha, HoraInicio, HoraFin, Disponible) VALUES (@Fecha, @HoraInicio, @HoraFin, @Disponible)";
-        connection.Execute(sql, disponibilidad);
+        using (var connection = new SqlConnection(connectionString))
+        {
+            var sql = "INSERT INTO Disponibilidad (Fecha, HoraInicio, HoraFin, Disponible) VALUES (@Fecha, @HoraInicio, @HoraFin, @Disponible)";
+            connection.Execute(sql, disponibilidad);
+        }
     }
-}
 
-// Reservar un turno
-public void ReservarTurno(Turno turno)
-{
-    using (var connection = new SqlConnection(connectionString))
+    // Obtener turnos agendados
+    public IEnumerable<Turno> ObtenerTurnos()
     {
-        var sql = "INSERT INTO Turnos (UsuarioID, FechaAgendada, Estado) VALUES (@UsuarioID, @FechaAgendada, 'Reservado')";
-        connection.Execute(sql, turno);
-
-        // Actualizar la disponibilidad a no disponible
-        var updateDisponibilidad = "UPDATE Disponibilidad SET Disponible = 0 WHERE Fecha = @FechaAgendada";
-        connection.Execute(updateDisponibilidad, new { FechaAgendada = turno.FechaAgendada });
+        using (var connection = new SqlConnection(connectionString))
+        {
+            return connection.Query<Turno>("SELECT * FROM Turnos");
+        }
     }
-}
+
+    // Reservar un turno
+    public void ReservarTurno(Turno turno)
+    {
+        using (var connection = new SqlConnection(connectionString))
+        {
+            var sql = "INSERT INTO Turnos (UsuarioID, FechaAgendada, Estado) VALUES (@UsuarioID, @FechaAgendada, 'Reservado')";
+            connection.Execute(sql, turno);
+
+            // Actualizar disponibilidad
+            var updateDisponibilidad = "UPDATE Disponibilidad SET Disponible = 0 WHERE Fecha = @FechaAgendada";
+            connection.Execute(updateDisponibilidad, new { FechaAgendada = turno.FechaAgendada });
+        }
+    }
+
+    // Cancelar un turno
+    public void CancelarTurno(int turnoID)
+    {
+        using (var connection = new SqlConnection(connectionString))
+        {
+            var sql = "UPDATE Turnos SET Estado = 'Cancelado' WHERE TurnoID = @TurnoID";
+            connection.Execute(sql, new { TurnoID = turnoID });
+
+            // Opción: Restaurar disponibilidad
+            var restoreDisponibilidad = "UPDATE Disponibilidad SET Disponible = 1 WHERE DisponibilidadID IN (SELECT DisponibilidadID FROM Turnos WHERE TurnoID = @TurnoID)";
+            connection.Execute(restoreDisponibilidad, new { TurnoID = turnoID });
+        }
+    }
 
 
     }

@@ -1,12 +1,11 @@
+namespace TorchMedia.Models
 
-using System;
-namespace TorchMedia.Models{
-public class Turno
 {
-    public int TurnoID { get; set; }
-    public string Nombre { get; set; }
-    public string Correo { get; set; }
-    public string Mensaje { get; set; }
-    public DateTime Fecha { get; set; }
-}
+    public class Turno
+    {
+        public int TurnoID { get; set; }
+        public int UsuarioID { get; set; }
+        public DateTime FechaAgendada { get; set; }
+        public string Estado { get; set; }
+    }
 }
