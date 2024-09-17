@@ -36,10 +36,13 @@ namespace TorchMedia.Controllers
             return View();
         }
 
-        public IActionResult Contactanos()
-        {
-            return View();
-        }    
+    public IActionResult Contactanos()
+    {
+        var model = new ContactanosViewModel();
+        model.Disponibilidad = repo.ObtenerDisponibilidad().ToList();
+        return View(model);
+    }
+   
         /*[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

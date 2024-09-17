@@ -210,6 +210,25 @@
                 }
             </select>
         </div>
+
+
+<div class="form-group">
+    <label for="fecha">Selecciona una fecha disponible</label>
+    @if (Model.Disponibilidad != null && Model.Disponibilidad.Any())
+    {
+        <select id="fecha" name="fecha">
+            @foreach (var disponibilidad in Model.Disponibilidad)
+            {
+                <option value="@disponibilidad.Fecha">@disponibilidad.Fecha.ToString("dd/MM/yyyy HH:mm")</option>
+            }
+        </select>
+    }
+    else
+    {
+        <p>No hay disponibilidad en este momento.</p>
+    }
+</div>
+
     </div>
     <div class="notification" id="success-notification">
         <p>Formulario enviado exitosamente.</p>
