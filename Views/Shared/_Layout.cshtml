@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Torchmedia.styles.css" asp-append-version="true" />
-    </head>
+</head>
 <body>
     <!-- Header -->
     <header>
@@ -15,23 +15,30 @@
             <nav>
                 <div class="logo">
                     <img src="Img/logo.png" width="75px" alt="Logo TorchMedia">
-                    <a href="#hero">
+                    <a href="@Url.Action("Index", "Home")">
                         <h1>TorchMedia</h1>
                     </a>
                 </div>
                 <div class="hamburger" id="hamburger">
                     <i class="fas fa-bars"></i>
                 </div>
-                <ul class="nav-links" id="nav-links">
-                    <li><a href="#quienes-somos">Quienes Somos</a></li>
-                    <li><a href="#nuestros-servicios">Nuestros Servicios</a></li>
-                    <li><a href="#proyectos">Proyectos</a></li>
-                    <li><a href="#testimonios">Testimonios</a></li>
-                    <li><a href="#hero" class="button">Contactanos</a></li>
-                </ul>
+<ul class="nav-links" id="nav-links">
+    <li><a href="@Url.Action("Index", "Home")">Quienes Somos</a></li>
+    <li><a href="@Url.Action("Index", "Home")">Nuestros Servicios</a></li>
+    <li><a href="@Url.Action("Index", "Home")">Proyectos</a></li>
+    <li><a href="@Url.Action("Index", "Home")">Testimonios</a></li>
 
+    @if (Context.Request.Cookies.ContainsKey("Correo"))
+    {
+        <li><a href="@Url.Action("MisTurnos", "Turnos")" class="button">@Context.Request.Cookies["Correo"]</a></li>
+        <li><a href="@Url.Action("CerrarSesion", "Usuarios")" class="button">Cerrar Sesión</a></li>
+    }
+    else
+    {
+        <li><a href="@Url.Action("Login", "Usuarios")" class="button">Iniciar Sesión</a></li>
+    }
+</ul>
             </nav>
-
         </div>
     </header>
 
