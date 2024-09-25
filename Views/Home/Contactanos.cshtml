@@ -1,3 +1,6 @@
+@using System.Linq
+@model TorchMedia.Models.ContactanosViewModel
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,7 +10,7 @@
     <title>Contactanos | Torchmedia</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="Img/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.main.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" defer></script>
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
@@ -214,19 +217,18 @@
 
 <div class="form-group">
     <label for="fecha">Selecciona una fecha disponible</label>
-    @if (Model.Disponibilidad != null && Model.Disponibilidad.Any())
+@if (Model.Disponibilidad != null && Model.Disponibilidad.Any())
+{
+    <p>Disponibilidad detectada:</p>
+    foreach (var disponibilidad in Model.Disponibilidad)
     {
-        <select id="fecha" name="fecha">
-            @foreach (var disponibilidad in Model.Disponibilidad)
-            {
-                <option value="@disponibilidad.Fecha">@disponibilidad.Fecha.ToString("dd/MM/yyyy HH:mm")</option>
-            }
-        </select>
+        <p>@disponibilidad.Fecha - @disponibilidad.HoraInicio - @disponibilidad.HoraFin</p>
     }
-    else
-    {
-        <p>No hay disponibilidad en este momento.</p>
-    }
+}
+else
+{
+    <p>No hay disponibilidad en este momento.</p>
+}
 </div>
 
     </div>

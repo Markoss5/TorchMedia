@@ -1,7 +1,6 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using TorchMedia.Models; // Asegúrate de que esto esté aquí
-
+using TorchMedia.Models;
 
 namespace TorchMedia.Controllers
 {
@@ -36,17 +35,11 @@ namespace TorchMedia.Controllers
             return View();
         }
 
-    public IActionResult Contactanos()
-    {
-        var model = new ContactanosViewModel();
-        model.Disponibilidad = repo.ObtenerDisponibilidad().ToList();
-        return View(model);
-    }
-   
-        /*[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+        public IActionResult Contactanos()
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }*/
+ var model = new ContactanosViewModel();
+    model.Disponibilidad = repo.ObtenerDisponibilidad(); // Asegúrate de que esta función devuelve una lista válida
+    return View(model);
+        }    
     }
 }

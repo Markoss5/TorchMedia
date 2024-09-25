@@ -113,13 +113,19 @@ public void ActualizarQuienesSomosContent(QuienesSomosContent content)
             }
         }
 
-    public IEnumerable<Disponibilidad> ObtenerDisponibilidad()
-    {
-        using (var connection = new SqlConnection(connectionString))
+public List<Disponibilidad> ObtenerDisponibilidad()
         {
-            return connection.Query<Disponibilidad>("SELECT * FROM Disponibilidad WHERE Disponible = 1");
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                string query = @" SELECT Fecha, HoraInicio, HoraFin, Disponible FROM Disponibilidad  WHERE Disponible = 1"; // Solo obtener disponibilidades que estén marcadas como disponibles.
+
+                // Ejecutar la consulta y mapear los resultados a la lista de Disponibilidad.
+                var disponibilidad = con.Query<Disponibilidad>(query).AsList();
+
+                // Si la consulta no devuelve nada, inicializa la lista como vacía.
+                return disponibilidad ?? new List<Disponibilidad>();
+            }
         }
-    }
 
     // Establecer disponibilidad
     public void EstablecerDisponibilidad(Disponibilidad disponibilidad)

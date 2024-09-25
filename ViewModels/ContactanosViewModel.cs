@@ -2,19 +2,20 @@ namespace TorchMedia.Models
 {
     public class ContactanosViewModel
     {
-        // Lista que almacenará las disponibilidades que se muestran en el formulario
         public List<Disponibilidad> Disponibilidad { get; set; }
 
-        // Puedes agregar más propiedades si lo necesitas
-        public string Nombre { get; set; }
-        public string Email { get; set; }
-        public string Pais { get; set; }
-        public string Mensaje { get; set; }
-
-        // Constructor para inicializar la lista de disponibilidad
+        // Aseguramos que la lista esté siempre inicializada al crear el objeto.
         public ContactanosViewModel()
         {
             Disponibilidad = new List<Disponibilidad>();
         }
     }
+
+    // public class Disponibilidad
+    // {
+    //     public DateTime Fecha { get; set; }
+    //     public TimeSpan HoraInicio { get; set; }
+    //     public TimeSpan HoraFin { get; set; }
+    //     public bool Disponible { get; set; }
+    // }
 }
